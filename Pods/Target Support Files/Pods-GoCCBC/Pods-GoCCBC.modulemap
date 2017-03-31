@@ -1,0 +1,6 @@
+framework module Pods_GoCCBC {
+  umbrella header "Pods-GoCCBC-umbrella.h"
+
+  export *
+  module * { export * }
+}
