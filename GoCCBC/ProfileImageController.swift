@@ -16,6 +16,8 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var doneButton: UIButton!
     
     
+    
+    
     // Connects the user to the online firebase database after retrieving information
     
     @IBAction func handleRegister(_ sender: Any)
@@ -31,7 +33,7 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user: FIRUser?, error) in
             
             if error != nil {
-                print(error!)
+                print(error!)              
                 return
             }
             
@@ -81,7 +83,7 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
                 return
             }
             
-            //self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "toWelcomeScreen", sender: nil)
         })
     }
     
@@ -91,7 +93,7 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
     private func registerUserIntoDb(uid: String, values: [String: Any]) {
         
         let ref = FIRDatabase.database().reference(fromURL: "https://goccbc.firebaseio.com/")
-        let usersReference = ref.child("users").child(uid)
+        let usersReference = ref.child("users")//.child(uid)
         
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
             
