@@ -465,7 +465,6 @@
                                                         <color key="titleColor" red="0.49099165201187134" green="0.59933280944824219" blue="0.4074607789516449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="home:" destination="KAd-CQ-kAX" eventType="touchUpInside" id="yop-iE-irA"/>
                                                         <segue destination="JvD-od-JX0" kind="presentation" id="5lU-4a-TvD"/>
                                                     </connections>
                                                 </button>
@@ -475,8 +474,7 @@
                                                         <color key="titleColor" red="0.49099165201187134" green="0.59933280944824219" blue="0.4074607789516449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="challenge:" destination="KAd-CQ-kAX" eventType="touchUpInside" id="71y-FL-Sr9"/>
-                                                        <segue destination="k4w-o5-x6L" kind="presentation" id="KEX-cC-ZkX"/>
+                                                        <segue destination="k4w-o5-x6L" kind="presentation" id="Cli-yb-N5a"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pY-wd-bkO">
@@ -1625,11 +1623,11 @@
         <image name="settings@1x copy" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eZm-CA-JND"/>
-        <segue reference="QR7-Aq-abV"/>
-        <segue reference="KEX-cC-ZkX"/>
         <segue reference="BbR-DD-pU6"/>
-        <segue reference="5lU-4a-TvD"/>
+        <segue reference="0c2-ML-g9T"/>
+        <segue reference="Cli-yb-N5a"/>
         <segue reference="XhG-mn-TGv"/>
+        <segue reference="5lU-4a-TvD"/>
+        <segue reference="eZm-CA-JND"/>
     </inferredMetricsTieBreakers>
 </document>
