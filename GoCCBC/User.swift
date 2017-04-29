@@ -15,5 +15,17 @@ class User: NSObject {
     var profileImageUrl: String?
     var gender: String?
     var major: String?
+    var caloriesBurnt: Double?
+    var time: Double?
+    var distance: Double?
+    
+    func setupStats(name: String, time: Double, distance: Double, calorieCount: Double) {
+        
+        self.name = name
+        self.time = time
+        self.distance = distance
+        self.caloriesBurnt = calorieCount
+        
+    }
 
 }

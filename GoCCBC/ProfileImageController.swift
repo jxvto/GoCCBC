@@ -11,100 +11,20 @@ import Firebase
 
 class ProfileImageController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var doneButton: UIButton!
-    
-    
-    
-    
-    // Connects the user to the online firebase database after retrieving information
-    
-    @IBAction func handleRegister(_ sender: Any)
-    {
-        
-        guard let name = (presentingViewController as! ViewController).nameTextfield.text, let gender = (presentingViewController as! ViewController).genderTextfield.text, let major = (presentingViewController as! ViewController).majorTextfield.text, let email = (presentingViewController as! ViewController).emailTextfield.text, let password = (presentingViewController as! ViewController).passwordTextfield.text
-            else
-        {
-            print("Form is not valid")
-            return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user: FIRUser?, error) in
-            
-            if error != nil {
-                print(error!)              
-                return
-            }
-            
-            guard let uid = user?.uid else
-            {
-                return
-            }
-            
-            //Successfully authenticated user
-            let imgName = NSUUID().uuidString
-            
-            
-            // Handles custom photo uploading by the user.
-            // Converts the image to a .jpeg for faster loading in the app
-            
-            let storageRef = FIRStorage.storage().reference().child("profile_Images").child("\(imgName).jpg")
-            
-            if let profileImg = self.profileImageView.image, let uploadData = UIImageJPEGRepresentation(profileImg, 0.1)
-            {
-                
-                
-                
-                storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
-                    
-                    if error != nil
-                    {
-                        print(error!)
-                        return
-                    }
-                    
-                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString
-                    {
-                        
-                        let values = ["name": name, "email": email, "profileImageUrl": profileImageUrl, "gender": gender, "major": major]
-                        self.registerUserIntoDb(uid: uid, values: values)
-                    }
-                    
-                })
-            }
-        })
-        
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            self.performSegue(withIdentifier: "toWelcomeScreen", sender: nil)
-        })
-    }
     
    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var updateButton: UIButton!
     
-    // Adds the newly authenticated user to the database of users
-    private func registerUserIntoDb(uid: String, values: [String: Any]) {
+    // Connects the user to the online firebase database after retrieving information
+    @IBAction func updateProfileImage(_ sender: Any) {
+        changeProfileImage()
         
-        let ref = FIRDatabase.database().reference(fromURL: "https://goccbc.firebaseio.com/")
-        let usersReference = ref.child("users")//.child(uid)
-        
-        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-            
-            if err != nil{
-                print(err!)
-                return
-            }
-            
-        })
+        let alertController = UIAlertController(title: "Sucess", message: "Your profile image was updated." , preferredStyle: UIAlertControllerStyle.alert)
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
     }
-    
     
     
     // Allows the user to select a custom image using the picker controller
@@ -136,7 +56,8 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
             profileImageView.image = selectedImage
         }
         
-        doneButton.setTitle("Continue", for: .normal)
+        updateButton.isHidden = false
+        updateButton.setTitle("Update", for: .normal)
         
         dismiss(animated: true, completion: nil)
     }
@@ -150,26 +71,90 @@ class ProfileImageController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
+    func setupUser() {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        FIRDatabase.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                
+                
+                let user = User()
+                user.setValuesForKeys(dictionary)
+                self.setupUserProfileImage(user: user)
+                
+            }
+        }, withCancel: nil)
+    }
+    
+    // Calls the method that uses caching to retrieve the user's profile image.
+    func setupUserProfileImage(user: User)
+    {
+        if let profileImageUrl = user.profileImageUrl {
+            profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
+        }
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUser()
         profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
         profileImageView.clipsToBounds = true
-        doneButton.layer.cornerRadius = 5
+        updateButton.layer.cornerRadius = 5
+        updateButton.isHidden = true
         profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleChangeProfileImage)))
 
        
     }
     
-    // To display the user's name on the welcome screen
-    override func viewWillAppear(_ animated: Bool) {
-        nameLabel.text = (presentingViewController as! ViewController).nameLabel.text
-        nameLabel.isHidden = true
+    
+    
+    func changeProfileImage()
+    {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else {
+            return
+        }
+        
+        //Successfully authenticated user
+        let imgName = NSUUID().uuidString
+        
+        
+        // Handles custom photo uploading by the user.
+        // Converts the image to a .jpeg for faster loading in the app
+        
+        let ref = FIRDatabase.database().reference(fromURL: "https://goccbc.firebaseio.com/")
+        let usersReference = ref.child("users").child(uid)
+        
+        let storageRef = FIRStorage.storage().reference().child("profile_Images").child("\(imgName).jpg")
+        
+        if let profileImg = self.profileImageView.image, let uploadData = UIImageJPEGRepresentation(profileImg, 0.1)
+        {
+            storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                
+                if error != nil
+                {
+                    print(error!)
+                    return
+                }
+                
+                if let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                {
+                    
+                    let values = ["profileImageUrl": profileImageUrl]
+                    usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                        
+                        if err != nil{
+                            print(err!)
+                            return
+                        }
+                    })
+                }
+                })
+        }
     }
-    
-
-
-    
 }

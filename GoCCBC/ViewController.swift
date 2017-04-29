@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var homeController: HomeScreenController?
 
@@ -29,9 +29,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var nameLabel: UILabel!
     var userName: String?
     
+    let genderOption = ["Male", "Female", "Unspecified"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        genderTextfield.inputView = pickerView
         setupInputs()
         
     }
@@ -45,13 +50,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             return
         }
         
-        
-        
+
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {(user: FIRUser?, error) in
             
             if error != nil {
                 print(error!)
-                let alertController = UIAlertController(title: "Email in use.", message: "The email you entered is already in use by another account." , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let alertController = UIAlertController(title: "Oops, something went wrong.", message: "\(String(describing: error!.localizedDescription))" , preferredStyle: UIAlertControllerStyle.alert)
                 let defaultAction = UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
@@ -78,8 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if let profileImg = self.profileImageView.image, let uploadData = UIImageJPEGRepresentation(profileImg, 0.1)
             {
-                
-                
                 
                 storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
                     
@@ -122,7 +125,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func registerUserIntoDb(uid: String, values: [String: Any]) {
         
         let ref = FIRDatabase.database().reference(fromURL: "https://goccbc.firebaseio.com/")
+        let leaderBoardRef = ref.child("leaderboard").child(uid)
         let usersReference = ref.child("users").child(uid)
+        
+        let distanceCovered: Double = 0
+        let duration: Double = 0
+        let calorieCount: Double = 0
         
         usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
             
@@ -132,82 +140,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
             
         })
-    }
-    
-    
-    
-    // Allows the user to select a custom image using the picker controller
-    func handleChangeProfileImage() {
-        let picker = UIImagePickerController()
         
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true, completion: nil)
-    }
-    
-    
-    // Allows the user to select a custom image using the picker controller
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let value = ["name": values["name"]!, "distance": distanceCovered, "time": duration, "caloriesBurnt": calorieCount]
         
-        
-        var selectedImageFromPicker: UIImage?
-        
-        
-        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
-            selectedImageFromPicker = editedImage
+        leaderBoardRef.updateChildValues(value, withCompletionBlock: { (err, ref) in
             
-        } else if let originalImage = info["UIImagePickerControllerImage"] as? UIImage {
-            selectedImageFromPicker = originalImage
+            if err != nil{
+                print(err!)
+                return
+            }
             
-        }
-        
-        if let selectedImage = selectedImageFromPicker {
-            profileImageView.image = selectedImage
-        }
-        
-        
-        dismiss(animated: true, completion: nil)
+        })
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return genderOption.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return genderOption[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        genderTextfield.text = genderOption[row]
     }
     
     
-    
-    // Dismisses the picker controller view
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        dismiss(animated: true, completion: nil)
+    func donePressed() {
+        genderTextfield.resignFirstResponder()
     }
-    
-    
-    
-    
     
     func setupInputs() {
         
         registerButton.layer.cornerRadius = 5
         
-        profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
-        profileImageView.clipsToBounds = true
-        profileImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleChangeProfileImage)))
+        // Sets up the view for the gender option picker
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: self.view.frame.size.height/6, width: self.view.frame.size.width, height: 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = UIBarStyle.blackTranslucent
+        toolBar.tintColor = UIColor.white
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(donePressed))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        toolBar.setItems([flexSpace,doneButton], animated: true)
+        genderTextfield.inputAccessoryView = toolBar
+
     }
     
     
-    func setupTextFields(textField: UITextField...) {
-        
-        for(_, textField) in textField.enumerated()
-        {
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-            textField.layer.cornerRadius = 0
-            textField.layer.borderWidth = 0.2
-        }
-        
-    }
-    
+    // Invokes the resign first responder methods of all the textfields.
     
     @IBAction func hideKeyboard(_ sender: Any)
     {
-        
         resignResonders(textfield: nameTextfield, genderTextfield, majorTextfield, emailTextfield, passwordTextfield)
-        
     }
     
     
@@ -218,9 +206,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             textfield.resignFirstResponder()
         }
     }
-
-    
-
 
 }
 

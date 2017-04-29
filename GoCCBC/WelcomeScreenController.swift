@@ -17,7 +17,7 @@ class WelcomeScreenController: UIViewController {
         
         // Displays the view for 3 seconds and transitions to the next screen
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
-            self.performSegue(withIdentifier: "toHome", sender: nil)
+            self.performSegue(withIdentifier: "toHomeScreen", sender: nil)
         })
 
         

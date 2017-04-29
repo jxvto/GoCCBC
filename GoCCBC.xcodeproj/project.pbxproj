@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		172321FF1E90BE060024131A /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172321FE1E90BE060024131A /* HomeScreenController.swift */; };
+		179204831EAE71FF00D53171 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204821EAE71FF00D53171 /* MapViewController.swift */; };
+		179204851EAE835600D53171 /* ChallengeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204841EAE835600D53171 /* ChallengeScreenVC.swift */; };
+		179204871EAE9D7600D53171 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204861EAE9D7600D53171 /* NewFriendViewController.swift */; };
+		179204891EAEFD5700D53171 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204881EAEFD5700D53171 /* LeaderboardViewController.swift */; };
 		17A2313B1E8F5FD000103FDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A2313A1E8F5FD000103FDB /* User.swift */; };
-		17A2313D1E8F600200103FDB /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A2313C1E8F600200103FDB /* HomeScreen.storyboard */; };
+		17C663B41E9996F5006D5D2C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C663B31E9996F5006D5D2C /* Extensions.swift */; };
+		17C663BF1E9D6963006D5D2C /* SetitngsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C663BE1E9D6963006D5D2C /* SetitngsViewController.swift */; };
+		17C663C31E9DDE01006D5D2C /* UpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C663C21E9DDE01006D5D2C /* UpdateInfoViewController.swift */; };
+		17C663C51E9F3A08006D5D2C /* UpdateNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C663C41E9F3A08006D5D2C /* UpdateNameViewController.swift */; };
 		17E150541E8DCFAE009D34F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E150531E8DCFAE009D34F6 /* AppDelegate.swift */; };
 		17E150561E8DCFAE009D34F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E150551E8DCFAE009D34F6 /* ViewController.swift */; };
 		17E150591E8DCFAE009D34F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E150571E8DCFAE009D34F6 /* Main.storyboard */; };
@@ -19,13 +26,26 @@
 		17E1506B1E8F169D009D34F6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E1506A1E8F169D009D34F6 /* LoginController.swift */; };
 		17E1506D1E8F3602009D34F6 /* ProfileImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E1506C1E8F3602009D34F6 /* ProfileImageController.swift */; };
 		17E1506F1E8F438B009D34F6 /* WelcomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E1506E1E8F438B009D34F6 /* WelcomeScreenController.swift */; };
+		17FE440A1EA7F4AF006B4E1F /* NewFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */; };
+		17FE440C1EA7F7D2006B4E1F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */; };
+		17FE440E1EA83BAA006B4E1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FE440D1EA83BAA006B4E1F /* MapKit.framework */; };
+		17FE44101EA83C6A006B4E1F /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */; };
+		17FE441A1EA85B5C006B4E1F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE44191EA85B5C006B4E1F /* LocationManager.swift */; };
+		17FE441C1EA85B94006B4E1F /* ChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */; };
 		9CDE9467A39340270EFDA2BD /* Pods_GoCCBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AED30A496B23D5CB3F1F7 /* Pods_GoCCBC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		172321FE1E90BE060024131A /* HomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
+		179204821EAE71FF00D53171 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		179204841EAE835600D53171 /* ChallengeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeScreenVC.swift; sourceTree = "<group>"; };
+		179204861EAE9D7600D53171 /* NewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
+		179204881EAEFD5700D53171 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		17A2313A1E8F5FD000103FDB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		17A2313C1E8F600200103FDB /* HomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
+		17C663B31E9996F5006D5D2C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		17C663BE1E9D6963006D5D2C /* SetitngsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetitngsViewController.swift; sourceTree = "<group>"; };
+		17C663C21E9DDE01006D5D2C /* UpdateInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateInfoViewController.swift; sourceTree = "<group>"; };
+		17C663C41E9F3A08006D5D2C /* UpdateNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateNameViewController.swift; sourceTree = "<group>"; };
 		17E150501E8DCFAE009D34F6 /* GoCCBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoCCBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E150531E8DCFAE009D34F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17E150551E8DCFAE009D34F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +57,12 @@
 		17E1506A1E8F169D009D34F6 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		17E1506C1E8F3602009D34F6 /* ProfileImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageController.swift; sourceTree = "<group>"; };
 		17E1506E1E8F438B009D34F6 /* WelcomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenController.swift; sourceTree = "<group>"; };
+		17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFriendsController.swift; sourceTree = "<group>"; };
+		17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		17FE440D1EA83BAA006B4E1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		17FE44191EA85B5C006B4E1F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "../../../../Downloads/LocationManager-master/LocationManager.swift"; sourceTree = "<group>"; };
+		17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeVC.swift; sourceTree = "<group>"; };
 		315A0CF3FCA0A4B818F1E464 /* Pods-GoCCBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCCBC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCCBC/Pods-GoCCBC.debug.xcconfig"; sourceTree = "<group>"; };
 		49C7CD8606F94FD9941D2F38 /* Pods-GoCCBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCCBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCCBC/Pods-GoCCBC.release.xcconfig"; sourceTree = "<group>"; };
 		608AED30A496B23D5CB3F1F7 /* Pods_GoCCBC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoCCBC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FE440E1EA83BAA006B4E1F /* MapKit.framework in Frameworks */,
 				9CDE9467A39340270EFDA2BD /* Pods_GoCCBC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				17A2313A1E8F5FD000103FDB /* User.swift */,
+				17C663B31E9996F5006D5D2C /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -66,9 +94,15 @@
 			isa = PBXGroup;
 			children = (
 				17E150571E8DCFAE009D34F6 /* Main.storyboard */,
-				17A2313C1E8F600200103FDB /* HomeScreen.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		17C663B51E9D631D006D5D2C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		17E150471E8DCFAE009D34F6 = {
@@ -92,6 +126,7 @@
 		17E150521E8DCFAE009D34F6 /* GoCCBC */ = {
 			isa = PBXGroup;
 			children = (
+				17C663B51E9D631D006D5D2C /* Helpers */,
 				17A231391E8F5FAF00103FDB /* Model */,
 				17A2313E1E8F601E00103FDB /* Views */,
 				17E150691E8F117F009D34F6 /* Controllers */,
@@ -107,11 +142,23 @@
 		17E150691E8F117F009D34F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17FE44191EA85B5C006B4E1F /* LocationManager.swift */,
+				17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */,
 				17E150551E8DCFAE009D34F6 /* ViewController.swift */,
+				17C663C21E9DDE01006D5D2C /* UpdateInfoViewController.swift */,
 				17E1506A1E8F169D009D34F6 /* LoginController.swift */,
 				17E1506C1E8F3602009D34F6 /* ProfileImageController.swift */,
+				17C663BE1E9D6963006D5D2C /* SetitngsViewController.swift */,
 				17E1506E1E8F438B009D34F6 /* WelcomeScreenController.swift */,
 				172321FE1E90BE060024131A /* HomeScreenController.swift */,
+				17C663C41E9F3A08006D5D2C /* UpdateNameViewController.swift */,
+				17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */,
+				179204861EAE9D7600D53171 /* NewFriendViewController.swift */,
+				179204881EAEFD5700D53171 /* LeaderboardViewController.swift */,
+				17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */,
+				17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */,
+				179204821EAE71FF00D53171 /* MapViewController.swift */,
+				179204841EAE835600D53171 /* ChallengeScreenVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +166,7 @@
 		BED219724CBB8C74FB79D63A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17FE440D1EA83BAA006B4E1F /* MapKit.framework */,
 				608AED30A496B23D5CB3F1F7 /* Pods_GoCCBC.framework */,
 			);
 			name = Frameworks;
@@ -196,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A2313D1E8F600200103FDB /* HomeScreen.storyboard in Resources */,
 				17E1505E1E8DCFAE009D34F6 /* LaunchScreen.storyboard in Resources */,
 				17E1505B1E8DCFAE009D34F6 /* Assets.xcassets in Resources */,
 				17E150661E8F052F009D34F6 /* GoogleService-Info.plist in Resources */,
@@ -261,11 +308,24 @@
 			files = (
 				17E150561E8DCFAE009D34F6 /* ViewController.swift in Sources */,
 				17E1506D1E8F3602009D34F6 /* ProfileImageController.swift in Sources */,
+				179204891EAEFD5700D53171 /* LeaderboardViewController.swift in Sources */,
 				172321FF1E90BE060024131A /* HomeScreenController.swift in Sources */,
+				17C663BF1E9D6963006D5D2C /* SetitngsViewController.swift in Sources */,
+				17FE441A1EA85B5C006B4E1F /* LocationManager.swift in Sources */,
+				17FE44101EA83C6A006B4E1F /* ChallengeViewController.swift in Sources */,
+				17FE441C1EA85B94006B4E1F /* ChallengeVC.swift in Sources */,
+				17C663C51E9F3A08006D5D2C /* UpdateNameViewController.swift in Sources */,
+				17C663C31E9DDE01006D5D2C /* UpdateInfoViewController.swift in Sources */,
+				17FE440A1EA7F4AF006B4E1F /* NewFriendsController.swift in Sources */,
+				17C663B41E9996F5006D5D2C /* Extensions.swift in Sources */,
 				17E1506B1E8F169D009D34F6 /* LoginController.swift in Sources */,
+				179204851EAE835600D53171 /* ChallengeScreenVC.swift in Sources */,
+				179204871EAE9D7600D53171 /* NewFriendViewController.swift in Sources */,
 				17E150541E8DCFAE009D34F6 /* AppDelegate.swift in Sources */,
 				17E1506F1E8F438B009D34F6 /* WelcomeScreenController.swift in Sources */,
 				17A2313B1E8F5FD000103FDB /* User.swift in Sources */,
+				17FE440C1EA7F7D2006B4E1F /* CustomTableViewCell.swift in Sources */,
+				179204831EAE71FF00D53171 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +453,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QZ6NZNBEM;
 				INFOPLIST_FILE = GoCCBC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GroupTwo.GoCCBC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -407,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QZ6NZNBEM;
 				INFOPLIST_FILE = GoCCBC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GroupTwo.GoCCBC;
 				PRODUCT_NAME = "$(TARGET_NAME)";

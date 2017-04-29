@@ -29,26 +29,22 @@ class LoginController: UIViewController {
             return
         }
         
-        
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
             
+            // Displays an alert view to inform the user of any error.
             if error != nil {
                 print(error!)
-                let alertController = UIAlertController(title: "Incorrect email or password", message: "The email or password you entered doesn't match our records" , preferredStyle: UIAlertControllerStyle.alert)
+                
+                let alertController = UIAlertController(title: "Incorrect email or password.", message: "The email or password you entered doesn't match our records." , preferredStyle: UIAlertControllerStyle.alert)
                 let defaultAction = UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil)
                 alertController.addAction(defaultAction)
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
             
-            //Test for connection
-            print("Success")
-            
             self.performSegue(withIdentifier: "toHomeScreenFromLogin", sender: nil)
-            //self.dismiss(animated: true, completion: nil)
         })
     }
-    
     
     
     
@@ -59,7 +55,6 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //textBG.layer.cornerRadius = 5
         loginButton?.layer.cornerRadius = 5
 
     }
