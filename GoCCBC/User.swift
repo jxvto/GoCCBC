@@ -19,6 +19,7 @@ class User: NSObject {
     var time: Double?
     var distance: Double?
     
+    
     func setupStats(name: String, time: Double, distance: Double, calorieCount: Double) {
         
         self.name = name

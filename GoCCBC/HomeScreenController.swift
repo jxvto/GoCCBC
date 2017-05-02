@@ -24,6 +24,8 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var calLabel: UILabel!
     
+    @IBOutlet weak var totalTimeLabel: UILabel!
+    @IBOutlet weak var totalDistanceLabel: UILabel!
     
     
     var users = [User]()
@@ -80,13 +82,18 @@ class HomeScreenController: UIViewController {
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 
-                let distance = String(describing: dictionary["distance"]!)
-                let time = String(describing: dictionary["time"]!)
-                //let calories = String(describing: dictionary["caloriesBurnt"]!)
                 
-                self.distanceLabel.text = distance
-                self.timeLabel.text = time
-                //self.calLabel.text = calories
+                let userDistance = dictionary["distance"]! as! Double
+                let userTime = dictionary["time"]! as! Double
+                
+                let displayDistance = userDistance.roundTo(places: 2)
+                let displayTime = userTime.roundTo(places: 2)
+                
+                self.totalDistanceLabel.text = String(displayDistance)
+                self.totalTimeLabel.text = String(displayTime)
+                self.distanceLabel.text = String(displayDistance)
+                self.timeLabel.text = String(displayTime)
+                
             }
         }, withCancel: nil)
         
@@ -120,7 +127,6 @@ class HomeScreenController: UIViewController {
             fetchUserAndSetupNavBarTitle()
         }
     }
-    
     
     
 }

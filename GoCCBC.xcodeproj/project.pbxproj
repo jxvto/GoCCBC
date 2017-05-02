@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		172321FF1E90BE060024131A /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172321FE1E90BE060024131A /* HomeScreenController.swift */; };
+		172576FF1EB7D89600270911 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172576FE1EB7D89600270911 /* SplashViewController.swift */; };
+		17753AFA1EB4511D00C09C65 /* TestHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17753AF91EB4511D00C09C65 /* TestHomeVC.swift */; };
 		179204831EAE71FF00D53171 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204821EAE71FF00D53171 /* MapViewController.swift */; };
 		179204851EAE835600D53171 /* ChallengeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204841EAE835600D53171 /* ChallengeScreenVC.swift */; };
 		179204871EAE9D7600D53171 /* NewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179204861EAE9D7600D53171 /* NewFriendViewController.swift */; };
@@ -29,14 +31,14 @@
 		17FE440A1EA7F4AF006B4E1F /* NewFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */; };
 		17FE440C1EA7F7D2006B4E1F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */; };
 		17FE440E1EA83BAA006B4E1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FE440D1EA83BAA006B4E1F /* MapKit.framework */; };
-		17FE44101EA83C6A006B4E1F /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */; };
-		17FE441A1EA85B5C006B4E1F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE44191EA85B5C006B4E1F /* LocationManager.swift */; };
 		17FE441C1EA85B94006B4E1F /* ChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */; };
 		9CDE9467A39340270EFDA2BD /* Pods_GoCCBC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 608AED30A496B23D5CB3F1F7 /* Pods_GoCCBC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		172321FE1E90BE060024131A /* HomeScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
+		172576FE1EB7D89600270911 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		17753AF91EB4511D00C09C65 /* TestHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHomeVC.swift; sourceTree = "<group>"; };
 		179204821EAE71FF00D53171 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		179204841EAE835600D53171 /* ChallengeScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeScreenVC.swift; sourceTree = "<group>"; };
 		179204861EAE9D7600D53171 /* NewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFriendViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +62,6 @@
 		17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFriendsController.swift; sourceTree = "<group>"; };
 		17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		17FE440D1EA83BAA006B4E1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
-		17FE44191EA85B5C006B4E1F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "../../../../Downloads/LocationManager-master/LocationManager.swift"; sourceTree = "<group>"; };
 		17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeVC.swift; sourceTree = "<group>"; };
 		315A0CF3FCA0A4B818F1E464 /* Pods-GoCCBC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCCBC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoCCBC/Pods-GoCCBC.debug.xcconfig"; sourceTree = "<group>"; };
 		49C7CD8606F94FD9941D2F38 /* Pods-GoCCBC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoCCBC.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoCCBC/Pods-GoCCBC.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,23 +142,23 @@
 		17E150691E8F117F009D34F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				17FE44191EA85B5C006B4E1F /* LocationManager.swift */,
-				17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */,
+				172576FE1EB7D89600270911 /* SplashViewController.swift */,
+				17753AF91EB4511D00C09C65 /* TestHomeVC.swift */,
 				17E150551E8DCFAE009D34F6 /* ViewController.swift */,
-				17C663C21E9DDE01006D5D2C /* UpdateInfoViewController.swift */,
-				17E1506A1E8F169D009D34F6 /* LoginController.swift */,
-				17E1506C1E8F3602009D34F6 /* ProfileImageController.swift */,
-				17C663BE1E9D6963006D5D2C /* SetitngsViewController.swift */,
 				17E1506E1E8F438B009D34F6 /* WelcomeScreenController.swift */,
+				17E1506A1E8F169D009D34F6 /* LoginController.swift */,
 				172321FE1E90BE060024131A /* HomeScreenController.swift */,
+				17C663BE1E9D6963006D5D2C /* SetitngsViewController.swift */,
+				17C663C21E9DDE01006D5D2C /* UpdateInfoViewController.swift */,
 				17C663C41E9F3A08006D5D2C /* UpdateNameViewController.swift */,
+				17E1506C1E8F3602009D34F6 /* ProfileImageController.swift */,
 				17FE44091EA7F4AF006B4E1F /* NewFriendsController.swift */,
 				179204861EAE9D7600D53171 /* NewFriendViewController.swift */,
 				179204881EAEFD5700D53171 /* LeaderboardViewController.swift */,
-				17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */,
-				17FE440F1EA83C6A006B4E1F /* ChallengeViewController.swift */,
 				179204821EAE71FF00D53171 /* MapViewController.swift */,
 				179204841EAE835600D53171 /* ChallengeScreenVC.swift */,
+				17FE441B1EA85B94006B4E1F /* ChallengeVC.swift */,
+				17FE440B1EA7F7D2006B4E1F /* CustomTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -311,8 +311,6 @@
 				179204891EAEFD5700D53171 /* LeaderboardViewController.swift in Sources */,
 				172321FF1E90BE060024131A /* HomeScreenController.swift in Sources */,
 				17C663BF1E9D6963006D5D2C /* SetitngsViewController.swift in Sources */,
-				17FE441A1EA85B5C006B4E1F /* LocationManager.swift in Sources */,
-				17FE44101EA83C6A006B4E1F /* ChallengeViewController.swift in Sources */,
 				17FE441C1EA85B94006B4E1F /* ChallengeVC.swift in Sources */,
 				17C663C51E9F3A08006D5D2C /* UpdateNameViewController.swift in Sources */,
 				17C663C31E9DDE01006D5D2C /* UpdateInfoViewController.swift in Sources */,
@@ -323,9 +321,11 @@
 				179204871EAE9D7600D53171 /* NewFriendViewController.swift in Sources */,
 				17E150541E8DCFAE009D34F6 /* AppDelegate.swift in Sources */,
 				17E1506F1E8F438B009D34F6 /* WelcomeScreenController.swift in Sources */,
+				17753AFA1EB4511D00C09C65 /* TestHomeVC.swift in Sources */,
 				17A2313B1E8F5FD000103FDB /* User.swift in Sources */,
 				17FE440C1EA7F7D2006B4E1F /* CustomTableViewCell.swift in Sources */,
 				179204831EAE71FF00D53171 /* MapViewController.swift in Sources */,
+				172576FF1EB7D89600270911 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

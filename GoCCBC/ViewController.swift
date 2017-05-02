@@ -11,8 +11,6 @@ import Firebase
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var homeController: HomeScreenController?
-
     
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var textFieldBG: UITextView!
